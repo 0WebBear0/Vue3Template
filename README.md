@@ -1,3 +1,4 @@
+[![Build Status](https://github.com/0WebBear0/Vue3Template/actions/workflows/vueCI.yml/badge.svg?branch=main)](https://github.com/0WebBear0/Vue3Template/actions/workflows/vueCI.yml)
 # vuetify_test
 
 ## Project setup
