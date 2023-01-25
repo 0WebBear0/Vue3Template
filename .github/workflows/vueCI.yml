@@ -14,15 +14,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: appleboy/ssh-action@master
-        with:
-          host: 134.0.113.170
-          username: root
-          key: ${{ secrets.MY_SECRET }}
-          port: 22
-          script: |
-            git pull origin main
-            git status
+      - name: executing remote ssh commands using password
+          uses: appleboy/ssh-action@v0.1.7
+          with:
+            host: ${{ secrets.HOST }}
+            username: ${{ secrets.USERNAME }}
+            password: ${{ secrets.PASSWORD }}
+            port: ${{ secrets.PORT }}
+            script: |
+              git pull origin main
+              git status
       # Шаг 1: собираем проект
       - name: docker build name = app
         run: docker build . -t app
