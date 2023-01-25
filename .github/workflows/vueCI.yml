@@ -23,6 +23,8 @@ jobs:
             script: |
               git pull origin main
               git status
+              docker build . -t app
+              docker run -d -p 80:80 app
       # Шаг 1: собираем проект
       - name: docker build name = app
         run: docker build . -t app
