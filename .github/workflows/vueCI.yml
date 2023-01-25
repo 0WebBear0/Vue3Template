@@ -17,7 +17,11 @@ jobs:
 
         # Шаг 0: Подготовка пространства
       - name: docker stop all
-        run: docker stop $(docker ps -a -q) & docker rm $(docker ps -a -q)
+        run: docker stop $(docker ps -a -q)
+
+        # Шаг 0: Подготовка пространства
+      - name: docker rm all
+        run: docker rm $(docker ps -a -q)
 
       # Шаг 1: собираем проект
       - name: docker build name = app
