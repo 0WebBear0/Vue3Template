@@ -16,9 +16,6 @@ jobs:
       - uses: actions/checkout@v3
 
       # Шаг 1: собираем проект
-      - name: docker build name = app
-        run: docker build . -t app
+      - name: docker-compose up
+        run: docker-compose up
 
-      # Шаг 2: запускаем тесты
-      - name: start on 80 port
-        run: docker run -d -p 80:80 app
